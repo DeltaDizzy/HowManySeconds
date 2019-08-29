@@ -8,6 +8,7 @@ namespace HowManySeconds
     public class HowManySeconds : MonoBehaviour
     {
         private double seconds = 0;
+        private double msgDuration = TMSConfig.Duration;
         private Texture2D tex;
         private ApplicationLauncherButton btn = new ApplicationLauncherButton();
         private Boolean showTime = false;
@@ -39,9 +40,9 @@ namespace HowManySeconds
 
         void Update()
         {
-            if (showTime = true)
+            if (showTime == true)
             {
-                ScreenMessages.PostScreenMessage(String.Format("[TMS] ", GetSeconds().ToString()), 2f);
+                ScreenMessages.PostScreenMessage(String.Format("[TMS] ", GetSeconds().ToString()), (float)msgDuration);
             }
         }
 
