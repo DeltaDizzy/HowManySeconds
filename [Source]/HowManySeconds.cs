@@ -8,8 +8,8 @@ namespace HowManySeconds
     public class HowManySeconds : MonoBehaviour
     {
         private double seconds = 0;
-        private double msgDuration = TMSConfig.Duration;
-        private Texture2D tex;
+        private double msgDuration = HMSConfig.Duration;
+        private Texture2D tex = GameDatabase.Instance.GetTexture("HowManySeconds/PluginData/icon.png", false);
         private ApplicationLauncherButton btn = new ApplicationLauncherButton();
         private Boolean showTime = false;
         private Boolean button = false; // prevent duplicate buttons
@@ -42,7 +42,7 @@ namespace HowManySeconds
         {
             if (showTime == true)
             {
-                ScreenMessages.PostScreenMessage(String.Format("[TMS] ", GetSeconds().ToString()), (float)msgDuration);
+                ScreenMessages.PostScreenMessage(String.Format("[HMS] ", GetSeconds().ToString()), (float)msgDuration);
             }
         }
 
