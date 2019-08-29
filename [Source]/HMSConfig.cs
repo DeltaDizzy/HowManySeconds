@@ -3,9 +3,9 @@
 namespace HowManySeconds
 {
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
-    public class TMSConfig : MonoBehaviour
+    public class HMSConfig : MonoBehaviour
     {
-        ConfigNode tmsnode;
+        ConfigNode hmsnode;
         private static double _duration;
 
         public static double Duration
@@ -22,7 +22,8 @@ namespace HowManySeconds
 
         void Start()
         {
-             tmsnode = GameDatabase.Instance.GetConfigs("TooManySeconds")[0].config;
+             hmsnode = GameDatabase.Instance.GetConfigs("HowManySeconds")[0].config;
+
         }
     }
 }
