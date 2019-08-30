@@ -9,7 +9,8 @@ namespace HowManySeconds
     {
         private double seconds = 0;
         private double msgDuration = HMSConfig.Duration;
-        private Texture2D tex = GameDatabase.Instance.GetTexture("HowManySeconds/PluginData/icon.png", false);
+        private Texture2D tex = HMSConfig.Icon;
+        private Boolean debug = HMSConfig.Debug;
         private ApplicationLauncherButton btn = new ApplicationLauncherButton();
         private Boolean showTime = false;
         private Boolean button = false; // prevent duplicate buttons
@@ -40,9 +41,13 @@ namespace HowManySeconds
 
         void Update()
         {
-            if (showTime == true)
+            if (showTime && debug)
             {
                 ScreenMessages.PostScreenMessage(String.Format("[HMS] ", GetSeconds().ToString()), (float)msgDuration);
+            }
+            else if (showTime && !debug)
+            {
+                Debug.Log(String.Format("[HMS] ", GetSeconds().ToString()));
             }
         }
 
