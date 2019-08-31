@@ -1,6 +1,7 @@
 ﻿using System;
 using KSP.UI.Screens;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace HowManySeconds
 {
@@ -17,6 +18,7 @@ namespace HowManySeconds
 
         void Start()
         {
+            Profiler.BeginSample("btn");
             if(ApplicationLauncher.Ready && !button)
             {
                 btn = ApplicationLauncher.Instance.AddModApplication(
@@ -31,6 +33,7 @@ namespace HowManySeconds
                     );
                 button = true;
             }
+            Profiler.EndSample();
         }
 
         private void Destroy()
