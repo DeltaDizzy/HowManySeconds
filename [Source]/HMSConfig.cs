@@ -39,6 +39,7 @@ namespace HowManySeconds
             _duration = Double.Parse(hmsnode.GetValue("msgDuration"));
             _iconTex = GameDatabase.Instance.GetTexture(hmsnode.GetValue("iconTexture"), false);
             _debug = Boolean.Parse(hmsnode.GetValue("debug"));
+            Debug.Log(hmsnode.ToString());
         }
     }
 }
